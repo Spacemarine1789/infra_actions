@@ -54,8 +54,8 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
-        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDuuBOeE2qS47nFTBdlog+29wEoAONatK9JJCkvyh0hAlNRwqLnBKmHJdJ0SQrUezqrP/b5B4h92kzcOSC4qhcJbr2Izjvx/3hZJbFrn3OJyoulRvP6CTC+oGRM1zTXOV/90nlIC94AbrjkiwzYqS59B5pRtxeOwAB907YWiuVmCCwez3TtuAfOEQRtwpAX/7YEKlUz5Yw/+1MB7P4WboGr6IK8Jmo0rEOKEjLSTxHNpIk+6ZSzxY/e19MfoG9wMaPfpirRTS0Vgp4oJifEkfWJe3Cdupq3mvZCAHCcv7cjdFUAHtOoK3O+Z/Y98wuBqwIxjvTk4SwuK6ZWSv0ASFM8htRheCgXQGO4BLZVGeVCLrGMZ30/RBc3ooTj9jeQMtXQWdK0MMgazhabfrbWHDqb/78qJI4/JVVSetz3tz3tZ5wPn2XlC0EB0RFEB4GbsEcc2MdqoofCLmW2CAhGZ8HIpipco+xujES5sPWC6w5lexi1N+NM7nxb7xLHDYhj56c= Space@DESKTOP-V0MFMVJ
-        # passphrase: ${{ secrets.PASSPHRASE }} 
+        key: ${{ secrets.SSH_KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }} 
         script: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/infra
           sudo docker stop $(sudo docker ps -a -q)
